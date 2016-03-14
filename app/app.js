@@ -1,12 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+angular.module('BelatrixApp', [
+  'BelatrixApp.services',
+  'BelatrixApp.controllers',
+  'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.
+	when("/directors", {templateUrl: "views/directors.html", controller: "directorsController"}).
+	when("/directors/:id", {templateUrl: "views/director.html", controller: "directorController"}).
+	otherwise({redirectTo: '/directors'});
 }]);

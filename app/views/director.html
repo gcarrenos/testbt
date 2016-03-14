@@ -1,0 +1,35 @@
+<nav>
+  <ul class="pager">
+    <li class="previous"><a href="/app/#/directors"><span aria-hidden="true">&larr;</span> Back to directors list</a></li>
+  </ul>
+</nav>
+<section id="main">
+	<div class="container">
+	<div class="row">
+
+		<div class="col-md-2">
+		<a href="#" class="thumbnail">
+      			<img ng-src="{{director.image}}" alt="director.fullName" />
+    		</a>
+    	</div>
+		<div class="col-md-4">
+
+			<h3>{{director.fullName}} </h3> 
+			<h6>{{director.dob  | date }} - <span>Age: {{director.age}}</span></h6>
+			<h6>Married to : {{director.spouse}}</h6>
+			<p>{{director.bio}}</p>
+			<address>
+				{{director.city}}, {{director.state}}, US<br /> 
+			</address>
+
+		</div>
+		<div class="col-md-6">
+							<div class="list-group">
+			<div ng-repeat="blockbuster in director.blockbusters">
+  				<a href="#" class="list-group-item"> <span class="glyphicon glyphicon glyphicon-film" aria-hidden="true"></span> {{blockbuster.movieName}} - {{blockbuster.release}}</a>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
